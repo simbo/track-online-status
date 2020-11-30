@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/simbo
-NVM_DIR="/home/simbo/.nvm"
+cd $HOME
+NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-node /home/simbo/track-online-status/bin/test-online-status.js
+node $HOME/track-online-status/bin/test-online-status.js
