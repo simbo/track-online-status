@@ -1,0 +1,58 @@
+{
+  "name": "track-online-status",
+  "version": "0.1.0",
+  "description": "A simple tool to track the online status of my home internet connection.",
+  "author": "Simon Lepel <simbo@simbo.de> (https://simbo.de)",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "build": "parcel build src/*.pug --out-dir public --public-url /online-status",
+    "start": "parcel src/*.pug --out-dir public --public-url /online-status",
+    "test": "echo \"No tests specified. Skipping...\" && exit 0"
+  },
+  "parcelCleanPaths": [
+    "public/*.html",
+    "public/*.js",
+    "public/*.css",
+    "public/*.map",
+    "public/assets"
+  ],
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "src/assets",
+        "staticOutDir": "assets"
+      }
+    ],
+    "watcherGlob": "**"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  },
+  "dependencies": {
+    "css-reset-and-normalize": "^2.3.3",
+    "date-fns": "^2.16.1",
+    "is-reachable": "^5.0.0",
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "@vue/component-compiler-utils": "^3.2.0",
+    "autoprefixer": "^10.0.4",
+    "css-mqpacker-sort-mediaqueries": "^0.2.2",
+    "cssnano": "^4.1.10",
+    "mqpacker": "^7.0.0",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-clean-easy": "^1.0.2",
+    "parcel-plugin-static-files-copy": "^2.5.0",
+    "postcss": "^8.1.10",
+    "pug": "^3.0.0",
+    "sass": "^1.29.0",
+    "typescript": "^4.1.2",
+    "vue-hot-reload-api": "^2.3.4",
+    "vue-template-compiler": "^2.6.12"
+  }
+}

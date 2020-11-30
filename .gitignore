@@ -1,0 +1,12 @@
+/node_modules
+/.cache
+
+/.vscode/*
+!/.vscode/settings.json
+
+/public/*
+!/public/log.json
+
+yarn-error.log*
+
+.DS_Store

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noImplicitThis": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "lib": ["dom", "esnext"],
+    "typeRoots": ["node_modules/@types"]
+  }
+}
