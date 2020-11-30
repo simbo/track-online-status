@@ -1,14 +1,14 @@
 const isReachable = require('is-reachable');
 const { readFile, writeFile } = require('fs');
-const { join, resolve } = require('path');
+const { join, resolve, dirname } = require('path');
 
-const config = require(resolve('config.json'));
-
-const LOG_FILE = resolve(join('public', 'log.json'));
+const rootDir = dirname(__dirname);
+const config = require(join(rootDir, 'config.json'));
+const logFile = resolve(join(rootDir, 'public', 'log.json'));
 
 async function readLog() {
   const contents = await new Promise((res, rej) => {
-    readFile(LOG_FILE, (err, data) => {
+    readFile(logFile, (err, data) => {
       if (err) rej(err);
       else res(data);
     });
@@ -19,7 +19,7 @@ async function readLog() {
 async function writeLog(log) {
   const contents = JSON.stringify(log);
   await new Promise((res, rej) => {
-    writeFile(LOG_FILE, contents, err => {
+    writeFile(logFile, contents, err => {
       if (err) rej(err);
       else res();
     });
