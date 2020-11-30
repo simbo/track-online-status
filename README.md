@@ -36,6 +36,10 @@ sudo nano /etc/nginx/sites-available/default
   }
 ```
 
+```sh
+sudo nginx -s reload
+```
+
 ### cron
 
 ```sh
@@ -44,7 +48,24 @@ crontab -e # create/edit user crontab
 
 ```cron
 # run online status test every minute
-* * * * * node /home/simbo/track-online-status/bin/test-online-status.js
+* * * * * /home/simbo/track-online-status/bin/cron-test-online-status
+```
+
+### update script
+
+```sh
+touch ~/bin/update-track-online-status
+chmod +x ~/bin/update-track-online-status
+nano ~/bin/update-track-online-status
+```
+
+```sh
+#!/bin/bash
+cd /home/simbo/track-online-status
+git fetch
+git pull
+yarn
+yarn build
 ```
 
 ## License
