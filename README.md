@@ -9,9 +9,17 @@
 
 ---
 
+## About
+
+I run this little thing on one of my raspberry pis at my home to keep track of
+the internet connection state.
+
 ## Requirements
 
-- node.js >= 14
+A small server in your LAN with…
+
+- nginx (or any other webserver)
+- nvm with node.js >= 14
 - yarn
 
 ## Setup
@@ -31,7 +39,7 @@ sudo nano /etc/nginx/sites-available/default
 ```
 
 ```nginx
-  location /online-status/ {
+  location /online-status {
     alias /home/simbo/track-online-status/public/;
   }
 ```
