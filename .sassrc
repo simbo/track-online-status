@@ -5,5 +5,6 @@
   "includePaths": [
     "./src/styles/imports",
     "node_modules"
-  ]
+  ],
+  "data": "@import 'vars';"
 }

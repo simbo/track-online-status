@@ -33,9 +33,11 @@
     "vue": "./node_modules/vue/dist/vue.common.js"
   },
   "dependencies": {
+    "apexcharts": "^3.22.2",
     "css-reset-and-normalize": "^2.3.3",
     "date-fns": "^2.16.1",
     "is-reachable": "^5.0.0",
+    "merge": "^2.1.0",
     "vue": "^2.6.12"
   },
   "devDependencies": {

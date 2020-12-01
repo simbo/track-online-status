@@ -1,0 +1,23 @@
+@import '../node_modules/css-reset-and-normalize/scss/reset-and-normalize.scss';
+@import '../node_modules/css-reset-and-normalize/scss/button-reset.scss';
+@import '../node_modules/css-reset-and-normalize/scss/link-reset.scss';
+
+body {
+  background: $colorBg;
+  color: $colorText;
+  line-height: (20/14);
+  font-family: $fontSans;
+}
+
+.view {
+  margin: 0 auto;
+  padding: 2em 1em;
+}
+
+.font--system {
+  font-family: $fontSystem;
+}
+
+.font--serif {
+  font-family: $fontSerif;
+}

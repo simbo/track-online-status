@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import { formatDistance } from 'date-fns';
 
 import { components } from './components/index';
 import { Changes } from './lib/changes.type';
@@ -19,8 +18,6 @@ new Vue({
     status: Status.Unknown as Status,
     lastChange: null as Date,
     lastCheck: null as Date,
-    statusSince: null as String,
-    checkedAgo: null as String,
     changes: null as Changes
   },
 
@@ -42,16 +39,17 @@ new Vue({
       fetch('/online-status/log.json')
         .then(response => response.json())
         .then(logObj => {
-          const now = new Date();
-          this.lastCheck = logObj.lastCheck ? new Date(logObj.lastCheck) : null;
-          this.changes = logObj.changes.map(([statusRaw, dateRaw]) => ({
+          const { lastCheck, changes } = logObj;
+          if (!lastCheck || !changes.length) {
+            return;
+          }
+          this.lastCheck = lastCheck ? new Date(lastCheck) : null;
+          this.changes = changes.map(([statusRaw, dateRaw]) => ({
             status: statusRaw ? Status.Online : Status.Offline,
             date: new Date(dateRaw)
           }));
           this.status = this.changes[0].status;
           this.lastChange = this.changes[0].date;
-          this.statusSince = formatDistance(now, new Date(this.lastChange));
-          this.checkedAgo = formatDistance(now, new Date(this.lastCheck));
         })
         .catch(console.error)
         .finally(() => {
