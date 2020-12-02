@@ -19,14 +19,9 @@ export default Vue.extend({
       default: null
     }
   },
-  data() {
-    return {
-      now: new Date()
-    };
-  },
   methods: {
     diff(date: Date) {
-      return formatDistance(this.now, date);
+      return formatDistance(new Date(), date);
     },
     date(date: Date) {
       return format(date, 'dd.MM.yyyy HH:mm:ss');
