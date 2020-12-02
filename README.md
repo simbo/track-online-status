@@ -14,6 +14,10 @@
 I run this little thing on one of my raspberry pis at my home to keep track of
 the internet connection state.
 
+### Screenshot
+
+![Screenshot](./preview.png)
+
 ## Requirements
 
 A small server in your LAN with…
